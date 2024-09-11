@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B563F9A-549B-461C-AA9F-526AACBABDDB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Login_Farmacia</RootNamespace>
+    <AssemblyName>Login_Farmacia</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clase\XMLDocument.cs" />
+    <Compile Include="Controlador\Inicio\ControllerInicio.cs" />
+    <Compile Include="Controlador\Proveedor\ControllerActualizarPro.cs" />
+    <Compile Include="Controlador\Proveedor\ControllerProveedor.cs" />
+    <Compile Include="Controlador\Recuperarcontra\Gmail\ControllerIngresarPIN.cs" />
+    <Compile Include="Controlador\Recuperarcontra\Reinicio\ControllerActualizarReinicio.cs" />
+    <Compile Include="Controlador\Recuperarcontra\Reinicio\ControllerReinicio.cs" />
+    <Compile Include="Controlador\Showusers\ControllerActualizar.cs" />
+    <Compile Include="Controlador\Login\ControllerLogin.cs" />
+    <Compile Include="Controlador\Login\ControllerRecuperarloginReinicio.cs" />
+    <Compile Include="Controlador\Recuperarcontra\Admin\ControllerRecuperarcontraporadmin.cs" />
+    <Compile Include="Controlador\Recuperarcontra\Gmail\ControllerRecuperarGmail.cs" />
+    <Compile Include="Controlador\Login\ControllerRecuperarlogin.cs" />
+    <Compile Include="Controlador\Recuperarcontra\ControllerRecuperarcontra.cs" />
+    <Compile Include="Controlador\Showusers\ControllerRegistrarse.cs" />
+    <Compile Include="Controlador\Showusers\Controllershowusers.cs" />
+    <Compile Include="Controlador\Recuperarcontra\Preguntas de seguridad\ControllerRecuperarporPregunta.cs" />
+    <Compile Include="Clase\Encriptar.cs" />
+    <Compile Include="Formularios\Inicio\FrmIniciar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Inicio\FrmIniciar.Designer.cs">
+      <DependentUpon>FrmIniciar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proveedor\FrmActualizarPro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proveedor\FrmActualizarPro.Designer.cs">
+      <DependentUpon>FrmActualizarPro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proveedor\FrmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proveedor\FrmProveedor.Designer.cs">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Gmail\FrmIngresarPin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Gmail\FrmIngresarPin.Designer.cs">
+      <DependentUpon>FrmIngresarPin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Reinicio\FrmActualizarReinicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Reinicio\FrmActualizarReinicio.Designer.cs">
+      <DependentUpon>FrmActualizarReinicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Reinicio\FrmReinicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Reinicio\FrmReinicio.Designer.cs">
+      <DependentUpon>FrmReinicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Server\FrmAdminConexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Server\FrmAdminConexion.Designer.cs">
+      <DependentUpon>FrmAdminConexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Showusers\FrmActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Showusers\FrmActualizar.Designer.cs">
+      <DependentUpon>FrmActualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login\FrmRecuperarloginReinicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login\FrmRecuperarloginReinicio.Designer.cs">
+      <DependentUpon>FrmRecuperarloginReinicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Admin\FrmRecuperarcontraporadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Admin\FrmRecuperarcontraporadmin.Designer.cs">
+      <DependentUpon>FrmRecuperarcontraporadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Gmail\FrmRecuperarGmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Gmail\FrmRecuperarGmail.Designer.cs">
+      <DependentUpon>FrmRecuperarGmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login\FrmRecuperarlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login\FrmRecuperarlogin.Designer.cs">
+      <DependentUpon>FrmRecuperarlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\FrmRecuperarcontra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\FrmRecuperarcontra.Designer.cs">
+      <DependentUpon>FrmRecuperarcontra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login\FrmRegistrarse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login\FrmRegistrarse.Designer.cs">
+      <DependentUpon>FrmRegistrarse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Showusers\Frmshowusers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Showusers\Frmshowusers.Designer.cs">
+      <DependentUpon>Frmshowusers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Preguntas de seguridad\FrmRecuperarporPregunta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Recuperarcontra\Preguntas de seguridad\FrmRecuperarporPregunta.Designer.cs">
+      <DependentUpon>FrmRecuperarporPregunta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\DAO\DAOPreguntas.cs" />
+    <Compile Include="Modelo\DAO\DAOProveedores.cs" />
+    <Compile Include="Modelo\DAO\DAOshowusers.cs" />
+    <Compile Include="Modelo\dbContext.cs" />
+    <Compile Include="Formularios\Login\Frmlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login\Frmlogin.Designer.cs">
+      <DependentUpon>Frmlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Showusers\Frmusers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Showusers\Frmusers.Designer.cs">
+      <DependentUpon>Frmusers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\DAO\DAOLogin.cs" />
+    <Compile Include="Modelo\DTO\DTOdbContext.cs" />
+    <Compile Include="Modelo\DTO\DTOLogin.cs" />
+    <Compile Include="Modelo\DTO\DTOPreguntas.cs" />
+    <Compile Include="Modelo\DTO\DTOProveedores.cs" />
+    <Compile Include="Modelo\DTO\DTOshowusers.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Inicio\FrmIniciar.resx">
+      <DependentUpon>FrmIniciar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedor\FrmActualizarPro.resx">
+      <DependentUpon>FrmActualizarPro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedor\FrmProveedor.resx">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Recuperarcontra\Gmail\FrmIngresarPin.resx">
+      <DependentUpon>FrmIngresarPin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Recuperarcontra\Reinicio\FrmActualizarReinicio.resx">
+      <DependentUpon>FrmActualizarReinicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Recuperarcontra\Reinicio\FrmReinicio.resx">
+      <DependentUpon>FrmReinicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Server\FrmAdminConexion.resx">
+      <DependentUpon>FrmAdminConexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Showusers\FrmActualizar.resx">
+      <DependentUpon>FrmActualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login\Frmlogin.resx">
+      <DependentUpon>Frmlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login\FrmRecuperarloginReinicio.resx">
+      <DependentUpon>FrmRecuperarloginReinicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Recuperarcontra\Admin\FrmRecuperarcontraporadmin.resx">
+      <DependentUpon>FrmRecuperarcontraporadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Recuperarcontra\Gmail\FrmRecuperarGmail.resx">
+      <DependentUpon>FrmRecuperarGmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login\FrmRecuperarlogin.resx">
+      <DependentUpon>FrmRecuperarlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Recuperarcontra\FrmRecuperarcontra.resx">
+      <DependentUpon>FrmRecuperarcontra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login\FrmRegistrarse.resx">
+      <DependentUpon>FrmRegistrarse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Showusers\Frmshowusers.resx">
+      <DependentUpon>Frmshowusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Showusers\Frmusers.resx">
+      <DependentUpon>Frmusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Recuperarcontra\Preguntas de seguridad\FrmRecuperarporPregunta.resx">
+      <DependentUpon>FrmRecuperarporPregunta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar sesion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Candado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrado.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
