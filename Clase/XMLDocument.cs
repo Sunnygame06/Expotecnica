@@ -1,4 +1,5 @@
-﻿using Login_Farmacia.Modelo.DTO;
+﻿using Login_Farmacia.Formularios.Server;
+using Login_Farmacia.Modelo.DTO;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -37,7 +38,8 @@ namespace Login_Farmacia.Clase
             }
             else
             {
-                
+                FrmAdminConexion openform = new FrmAdminConexion(1);
+                openform.ShowDialog();
             }
         }
 

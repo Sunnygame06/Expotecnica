@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login_Farmacia.Modelo.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -14,11 +15,7 @@ namespace Login_Farmacia
         {
             try
             {
-                string server = "SQL8020.site4now.net";
-                string database = "db_aac69e_higia";
-                string userId = "db_aac69e_higia_admin";
-                string Password = "Yv2R7XfC";
-                SqlConnection conexion = new SqlConnection($"Server = {server}; Database = {database}; User Id = {userId}; Password = {Password}");
+                SqlConnection conexion = new SqlConnection($"Server = {DTOdbContext.Server}; Database = {DTOdbContext.Database}; User Id = {DTOdbContext.User}; Password = {DTOdbContext.Password}");
                 
                 conexion.Open();
                 return conexion;

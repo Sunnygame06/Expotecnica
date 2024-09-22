@@ -1,4 +1,4 @@
-﻿using Login_Farmacia.Controlador.Servidor;
+﻿using Login_Farmacia.Controlador.Recuperarcontra;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Login_Farmacia.Formularios.Server
+namespace Login_Farmacia.Formularios.Recuperarcontra
 {
-    public partial class FrmAdminConexion : Form
+    public partial class FrmReinicio : Form
     {
-        public FrmAdminConexion(int origen)
+        public FrmReinicio()
         {
             InitializeComponent();
-            ControllerAdminconexcion Objcontrol = new ControllerAdminconexcion(this, origen);
+            ControllerReinicio objControl = new ControllerReinicio(this);
         }
     }
 }

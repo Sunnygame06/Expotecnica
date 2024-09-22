@@ -59,6 +59,7 @@
     <Compile Include="Controlador\Recuperarcontra\Gmail\ControllerIngresarPIN.cs" />
     <Compile Include="Controlador\Recuperarcontra\Reinicio\ControllerActualizarReinicio.cs" />
     <Compile Include="Controlador\Recuperarcontra\Reinicio\ControllerReinicio.cs" />
+    <Compile Include="Controlador\Servidor\ControllerAdminconexcion.cs" />
     <Compile Include="Controlador\Showusers\ControllerActualizar.cs" />
     <Compile Include="Controlador\Login\ControllerLogin.cs" />
     <Compile Include="Controlador\Login\ControllerRecuperarloginReinicio.cs" />
@@ -66,7 +67,7 @@
     <Compile Include="Controlador\Recuperarcontra\Gmail\ControllerRecuperarGmail.cs" />
     <Compile Include="Controlador\Login\ControllerRecuperarlogin.cs" />
     <Compile Include="Controlador\Recuperarcontra\ControllerRecuperarcontra.cs" />
-    <Compile Include="Controlador\Showusers\ControllerRegistrarse.cs" />
+    <Compile Include="Controlador\Login\ControllerRegistrarse.cs" />
     <Compile Include="Controlador\Showusers\Controllershowusers.cs" />
     <Compile Include="Controlador\Recuperarcontra\Preguntas de seguridad\ControllerRecuperarporPregunta.cs" />
     <Compile Include="Clase\Encriptar.cs" />
@@ -166,6 +167,7 @@
     <Compile Include="Formularios\Recuperarcontra\Preguntas de seguridad\FrmRecuperarporPregunta.Designer.cs">
       <DependentUpon>FrmRecuperarporPregunta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\ControllerInit.cs" />
     <Compile Include="Modelo\DAO\DAOPreguntas.cs" />
     <Compile Include="Modelo\DAO\DAOProveedores.cs" />
     <Compile Include="Modelo\DAO\DAOshowusers.cs" />

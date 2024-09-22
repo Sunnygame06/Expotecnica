@@ -30,16 +30,17 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblServidor = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.lblBaseDatos = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDataBase = new System.Windows.Forms.TextBox();
+            this.rdHabilitarWindows = new System.Windows.Forms.RadioButton();
+            this.rdDeshabilitarWindows = new System.Windows.Forms.RadioButton();
+            this.txtSqlAuth = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtSqlPass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.pictureBox1.Image = global::Login_Farmacia.Properties.Resources.Candado;
             this.pictureBox1.Location = new System.Drawing.Point(1, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(272, 267);
+            this.pictureBox1.Size = new System.Drawing.Size(272, 294);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -63,12 +64,12 @@
             this.lblServidor.TabIndex = 1;
             this.lblServidor.Text = "Servidor URL:";
             // 
-            // textBox1
+            // txtUser
             // 
-            this.textBox1.Location = new System.Drawing.Point(296, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(391, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtUser.Location = new System.Drawing.Point(296, 34);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(391, 20);
+            this.txtUser.TabIndex = 2;
             // 
             // lblBaseDatos
             // 
@@ -80,41 +81,42 @@
             this.lblBaseDatos.TabIndex = 3;
             this.lblBaseDatos.Text = "Base de Datos:";
             // 
-            // textBox2
+            // txtDataBase
             // 
-            this.textBox2.Location = new System.Drawing.Point(296, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(391, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtDataBase.Location = new System.Drawing.Point(296, 94);
+            this.txtDataBase.Name = "txtDataBase";
+            this.txtDataBase.Size = new System.Drawing.Size(391, 20);
+            this.txtDataBase.TabIndex = 4;
             // 
-            // radioButton1
+            // rdHabilitarWindows
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(296, 170);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(221, 17);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Habilitar seguridad integrada de Windows";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdHabilitarWindows.AutoSize = true;
+            this.rdHabilitarWindows.Location = new System.Drawing.Point(296, 170);
+            this.rdHabilitarWindows.Name = "rdHabilitarWindows";
+            this.rdHabilitarWindows.Size = new System.Drawing.Size(221, 17);
+            this.rdHabilitarWindows.TabIndex = 5;
+            this.rdHabilitarWindows.TabStop = true;
+            this.rdHabilitarWindows.Text = "Habilitar seguridad integrada de Windows";
+            this.rdHabilitarWindows.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdDeshabilitarWindows
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(296, 193);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(232, 17);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Desabilitar seguridad integrada de Windows";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdDeshabilitarWindows.AutoSize = true;
+            this.rdDeshabilitarWindows.Checked = true;
+            this.rdDeshabilitarWindows.Location = new System.Drawing.Point(296, 193);
+            this.rdDeshabilitarWindows.Name = "rdDeshabilitarWindows";
+            this.rdDeshabilitarWindows.Size = new System.Drawing.Size(232, 17);
+            this.rdDeshabilitarWindows.TabIndex = 6;
+            this.rdDeshabilitarWindows.TabStop = true;
+            this.rdDeshabilitarWindows.Text = "Desabilitar seguridad integrada de Windows";
+            this.rdDeshabilitarWindows.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtSqlAuth
             // 
-            this.textBox3.Location = new System.Drawing.Point(554, 169);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(143, 20);
-            this.textBox3.TabIndex = 7;
+            this.txtSqlAuth.Location = new System.Drawing.Point(554, 169);
+            this.txtSqlAuth.Name = "txtSqlAuth";
+            this.txtSqlAuth.Size = new System.Drawing.Size(143, 20);
+            this.txtSqlAuth.TabIndex = 7;
             // 
             // label1
             // 
@@ -126,12 +128,12 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "SQL Authentication";
             // 
-            // textBox4
+            // txtSqlPass
             // 
-            this.textBox4.Location = new System.Drawing.Point(554, 220);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(143, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtSqlPass.Location = new System.Drawing.Point(554, 220);
+            this.txtSqlPass.Name = "txtSqlPass";
+            this.txtSqlPass.Size = new System.Drawing.Size(143, 20);
+            this.txtSqlPass.TabIndex = 9;
             // 
             // label2
             // 
@@ -153,24 +155,40 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Seguridad integrada de Windows";
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.Location = new System.Drawing.Point(554, 260);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(143, 23);
+            this.btnGuardar.TabIndex = 12;
+            this.btnGuardar.Text = "Guardar Configuración";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
             // FrmAdminConexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 262);
+            this.ClientSize = new System.Drawing.Size(762, 295);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtSqlPass);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSqlAuth);
+            this.Controls.Add(this.rdDeshabilitarWindows);
+            this.Controls.Add(this.rdHabilitarWindows);
+            this.Controls.Add(this.txtDataBase);
             this.Controls.Add(this.lblBaseDatos);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblServidor);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAdminConexion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAdminConexion";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -182,15 +200,16 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label lblServidor;
-        private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Label lblBaseDatos;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtUser;
+        public System.Windows.Forms.TextBox txtDataBase;
+        public System.Windows.Forms.TextBox txtSqlAuth;
+        public System.Windows.Forms.TextBox txtSqlPass;
+        public System.Windows.Forms.RadioButton rdHabilitarWindows;
+        public System.Windows.Forms.RadioButton rdDeshabilitarWindows;
+        public System.Windows.Forms.Button btnGuardar;
     }
 }

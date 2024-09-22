@@ -1,4 +1,4 @@
-﻿using Login_Farmacia.Controlador.Servidor;
+﻿using Login_Farmacia.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Login_Farmacia.Formularios.Server
+namespace Login_Farmacia.Formularios
 {
-    public partial class FrmAdminConexion : Form
+    public partial class FrmRecuperarGmail : Form
     {
-        public FrmAdminConexion(int origen)
+        public FrmRecuperarGmail()
         {
             InitializeComponent();
-            ControllerAdminconexcion Objcontrol = new ControllerAdminconexcion(this, origen);
+            ControllerRecuperarGmail objControl = new ControllerRecuperarGmail(this);
         }
     }
 }
