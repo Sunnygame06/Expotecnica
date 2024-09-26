@@ -43,14 +43,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Candado = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxWifi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Candado)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.Candado);
             this.panel1.Controls.Add(this.lblPass);
             this.panel1.Controls.Add(this.lblUser);
             this.panel1.Controls.Add(this.PBoxWifi);
@@ -217,6 +220,17 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // Candado
+            // 
+            this.Candado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Candado.Image = global::Login_Farmacia.Properties.Resources.Cerrado;
+            this.Candado.Location = new System.Drawing.Point(332, 3);
+            this.Candado.Name = "Candado";
+            this.Candado.Size = new System.Drawing.Size(45, 33);
+            this.Candado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Candado.TabIndex = 15;
+            this.Candado.TabStop = false;
+            // 
             // Frmlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +247,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBoxWifi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Candado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,6 +269,7 @@
         public System.Windows.Forms.PictureBox PBoxWifi;
         public System.Windows.Forms.Label lblUser;
         public System.Windows.Forms.Label lblPass;
+        public System.Windows.Forms.PictureBox Candado;
     }
 }
 

@@ -9,6 +9,7 @@ using Login_Farmacia.Formularios;
 using Login_Farmacia.Modelo;
 using System.IO;
 using System.Security.Cryptography;
+using Login_Farmacia.Formularios.Server;
 
 namespace Login_Farmacia
 {
@@ -32,6 +33,7 @@ namespace Login_Farmacia
             ObjLogin.btnlogo.Click += new EventHandler(History);
             ObjLogin.checkpass.CheckedChanged += new EventHandler(OcultarPass);
             ObjLogin.lblrecuperar.Click += new EventHandler(Mensaje);
+            ObjLogin.Candado.Click += new EventHandler(Candado);
         }
 
         public void Prueba(object sender, EventArgs e)
@@ -166,6 +168,12 @@ namespace Login_Farmacia
         {
             FrmRecuperarcontra Recuperarcontra = new FrmRecuperarcontra();
             Recuperarcontra.Show();
+        }
+
+        public void Candado(object sender, EventArgs e)
+        {
+            FrmAdminClave open = new FrmAdminClave();
+            open.Show();
         }
     }
 }

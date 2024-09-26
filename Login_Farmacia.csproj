@@ -59,6 +59,7 @@
     <Compile Include="Controlador\Recuperarcontra\Gmail\ControllerIngresarPIN.cs" />
     <Compile Include="Controlador\Recuperarcontra\Reinicio\ControllerActualizarReinicio.cs" />
     <Compile Include="Controlador\Recuperarcontra\Reinicio\ControllerReinicio.cs" />
+    <Compile Include="Controlador\Servidor\ControllerAdminClave.cs" />
     <Compile Include="Controlador\Servidor\ControllerAdminconexcion.cs" />
     <Compile Include="Controlador\Showusers\ControllerActualizar.cs" />
     <Compile Include="Controlador\Login\ControllerLogin.cs" />
@@ -106,6 +107,12 @@
     </Compile>
     <Compile Include="Formularios\Recuperarcontra\Reinicio\FrmReinicio.Designer.cs">
       <DependentUpon>FrmReinicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Server\FrmAdminClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Server\FrmAdminClave.Designer.cs">
+      <DependentUpon>FrmAdminClave.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Server\FrmAdminConexion.cs">
       <SubType>Form</SubType>
@@ -209,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Recuperarcontra\Reinicio\FrmReinicio.resx">
       <DependentUpon>FrmReinicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Server\FrmAdminClave.resx">
+      <DependentUpon>FrmAdminClave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Server\FrmAdminConexion.resx">
       <DependentUpon>FrmAdminConexion.cs</DependentUpon>

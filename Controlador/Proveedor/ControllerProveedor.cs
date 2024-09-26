@@ -15,7 +15,6 @@ namespace Login_Farmacia.Controlador.Proveedor
     internal class ControllerProveedor
     {
         FrmProveedor ObjProveedor;
-        int Intentos;
 
         public ControllerProveedor(FrmProveedor Vista)
         {
@@ -33,6 +32,7 @@ namespace Login_Farmacia.Controlador.Proveedor
         public void Refrescar(object sender, EventArgs e)
         {
             MostrarProveedores();
+            ObjProveedor.txtPass.UseSystemPasswordChar = true;
         }
 
         public void MostrarProveedores()
@@ -44,23 +44,29 @@ namespace Login_Farmacia.Controlador.Proveedor
 
         public void listo(object sender, EventArgs e)
         {
-            DAOLogin daoAdmin = new DAOLogin();
-            daoAdmin.Password1 = Encriptar.Encriptacion(ObjProveedor.txtPass.Text);
-            bool retorno = daoAdmin.ContraAdmin();
-            if (retorno == true)
+            if (ObjProveedor.txtPass.Text == "")
             {
-                MessageBox.Show("Los datos son correctos", "Datos Correctos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ObjProveedor.lblContraseña.Visible = false;
-                ObjProveedor.lblIntervencion.Visible = false;
-                ObjProveedor.Candado.Visible = false;
-                ObjProveedor.txtPass.Visible = false;
-                ObjProveedor.panel2.Visible = false;
-                ObjProveedor.btnlisto.Visible = false;
-                Intentos++;
+                MessageBox.Show("EC-02 Algunos campos no se han llenado", "Accion Interrumpida", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Los datos son incorrectos", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DAOLogin daoAdmin = new DAOLogin();
+                daoAdmin.Password1 = Encriptar.Encriptacion(ObjProveedor.txtPass.Text);
+                bool retorno = daoAdmin.ContraAdmin();
+                if (retorno == true)
+                {
+                    MessageBox.Show("Los datos son correctos", "Datos Correctos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ObjProveedor.lblContraseña.Visible = false;
+                    ObjProveedor.lblIntervencion.Visible = false;
+                    ObjProveedor.Candado.Visible = false;
+                    ObjProveedor.txtPass.Visible = false;
+                    ObjProveedor.panel2.Visible = false;
+                    ObjProveedor.btnlisto.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Los datos son incorrectos", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
