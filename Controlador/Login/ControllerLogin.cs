@@ -10,6 +10,9 @@ using Login_Farmacia.Modelo;
 using System.IO;
 using System.Security.Cryptography;
 using Login_Farmacia.Formularios.Server;
+using System.Runtime.InteropServices;
+using Login_Farmacia.Modelo.DTO;
+using System.Drawing;
 
 namespace Login_Farmacia
 {
@@ -47,8 +50,27 @@ namespace Login_Farmacia
                 MessageBox.Show("La base de datos esta conectada", "Conexion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+       (
+           int nLeftRect,     // x-coordinate of upper-left corner
+           int nTopRect,      // y-coordinate of upper-left corner
+           int nRightRect,    // x-coordinate of lower-right corner
+           int nBottomRect,   // y-coordinate of lower-right corner
+           int nWidthEllipse, // height of ellipse
+           int nHeightEllipse // width of ellipse
+       );
+
         private void Iniciar(object sender, EventArgs e)
         {
+            ObjLogin.panel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ObjLogin.panel1.Width, ObjLogin.panel1.Height, 30, 30));
+            ObjLogin.btnlogin.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ObjLogin.btnlogin.Width, ObjLogin.btnlogin.Height, 10, 10));
+            ObjLogin.btnregistrarse.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ObjLogin.btnregistrarse.Width, ObjLogin.btnregistrarse.Height, 10, 10));
+            ObjLogin.btnCerrar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ObjLogin.btnCerrar.Width, ObjLogin.btnCerrar.Height, 10, 10));
+            ObjLogin.txtUser.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ObjLogin.txtUser.Width, ObjLogin.txtUser.Height, 0, 0));
+            ObjLogin.txtPass.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ObjLogin.txtPass.Width, ObjLogin.txtPass.Height, 0, 30));
+
             if (ObjLogin.txtPass.Text.Trim().Equals(""))
             {
                 ObjLogin.txtPass.Text = "Contraseña";

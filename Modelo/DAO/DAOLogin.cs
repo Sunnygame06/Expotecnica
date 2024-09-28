@@ -22,7 +22,7 @@ namespace Login_Farmacia.Modelo.DAO
             try
             {
                 command.Connection = GetConnection();
-                string query = "SELECT * FROM Personas WHERE Usernames = @Usernames AND Passwords = @Passwords";
+                string query = "SELECT * FROM Personas WHERE Usernames COLLATE Latin1_General_CI_AS = @Usernames AND Passwords COLLATE Latin1_General_CI_AS = @Passwords";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("@Usernames", Username1);
                 cmd.Parameters.AddWithValue("@Passwords", Password1);

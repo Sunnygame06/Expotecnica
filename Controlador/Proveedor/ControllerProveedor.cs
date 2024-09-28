@@ -1,13 +1,9 @@
-﻿using Login_Farmacia.Formularios;
+﻿using Login_Farmacia.Formularios.Empleados;
 using Login_Farmacia.Formularios.Inicio;
 using Login_Farmacia.Formularios.Proveedor;
 using Login_Farmacia.Modelo.DAO;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Login_Farmacia.Controlador.Proveedor
@@ -20,13 +16,14 @@ namespace Login_Farmacia.Controlador.Proveedor
         {
             ObjProveedor = Vista;
             ObjProveedor.Load += new EventHandler(Refrescar);
-            ObjProveedor.btnCerrarSesion.Click += new EventHandler(Cerrar);
-            ObjProveedor.btnLogo.Click += new EventHandler(Logo);
+            //ObjProveedor.btnCerrarSesion.Click += new EventHandler(Cerrar);
+            //ObjProveedor.btnLogo.Click += new EventHandler(Logo);
             ObjProveedor.txtBuscar.KeyPress += new KeyPressEventHandler(Buscar);
             ObjProveedor.btnAgregar.Click += new EventHandler(Agregar);
             ObjProveedor.btnActualizar.Click += new EventHandler(Actualizar);
             ObjProveedor.btnEliminar.Click += new EventHandler(Eliminar);
             ObjProveedor.btnlisto.Click += new EventHandler(listo);
+            //ObjProveedor.btnEmpleado.Click += new EventHandler(Empleado);
         }
 
         public void Refrescar(object sender, EventArgs e)
@@ -146,6 +143,13 @@ namespace Login_Farmacia.Controlador.Proveedor
         public void Logo(object sender, EventArgs e)
         {
             FrmIniciar open = new FrmIniciar();
+            open.Show();
+            ObjProveedor.Hide();
+        }
+
+        public void Empleado(object sender, EventArgs e)
+        {
+            FrmEmpleado open = new FrmEmpleado();
             open.Show();
             ObjProveedor.Hide();
         }
