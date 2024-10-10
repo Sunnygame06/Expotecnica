@@ -11,17 +11,12 @@ using System.Windows.Forms;
 
 namespace Login_Farmacia.Formularios.Empleados
 {
-    public partial class FrmAgregarEmpleado : Form
+    public partial class FrmActualizarEmpleado : Form
     {
-        public FrmAgregarEmpleado()
+        public FrmActualizarEmpleado(int id, string Nombre, string DUI, string Telefono, string EstadoCivil, DateTime FechadeNacimiento, int Usuario)
         {
             InitializeComponent();
-            ControllerAgregar open = new ControllerAgregar(this);
-        }
-
-        private void FrmAgregarEmpleado_Load(object sender, EventArgs e)
-        {
-
+            ControllerActualizarEmpleado ObjControl = new ControllerActualizarEmpleado(this, id, Nombre, DUI, Telefono, EstadoCivil, FechadeNacimiento, Usuario);
         }
     }
 }

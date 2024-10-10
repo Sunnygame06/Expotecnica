@@ -34,7 +34,6 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.lblIntervencion = new System.Windows.Forms.Label();
             this.btnlisto = new System.Windows.Forms.Button();
-            this.Candado = new System.Windows.Forms.PictureBox();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -49,11 +48,12 @@
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.ListaProveedores = new System.Windows.Forms.DataGridView();
+            this.Candado = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Candado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaProveedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Candado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +100,8 @@
             // 
             // lblContraseña
             // 
-            this.lblContraseña.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblContraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,7 +113,8 @@
             // 
             // txtPass
             // 
-            this.txtPass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPass.Location = new System.Drawing.Point(319, 127);
             this.txtPass.Name = "txtPass";
@@ -121,7 +123,8 @@
             // 
             // lblIntervencion
             // 
-            this.lblIntervencion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblIntervencion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIntervencion.AutoSize = true;
             this.lblIntervencion.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,7 +136,8 @@
             // 
             // btnlisto
             // 
-            this.btnlisto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnlisto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnlisto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlisto.Location = new System.Drawing.Point(363, 177);
@@ -142,17 +146,6 @@
             this.btnlisto.TabIndex = 1;
             this.btnlisto.Text = "Listo";
             this.btnlisto.UseVisualStyleBackColor = true;
-            // 
-            // Candado
-            // 
-            this.Candado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Candado.Image = global::Login_Farmacia.Properties.Resources.Cerrado;
-            this.Candado.Location = new System.Drawing.Point(135, 60);
-            this.Candado.Name = "Candado";
-            this.Candado.Size = new System.Drawing.Size(145, 201);
-            this.Candado.TabIndex = 0;
-            this.Candado.TabStop = false;
             // 
             // btnActualizar
             // 
@@ -312,6 +305,18 @@
             this.ListaProveedores.Size = new System.Drawing.Size(511, 410);
             this.ListaProveedores.TabIndex = 10;
             // 
+            // Candado
+            // 
+            this.Candado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Candado.Image = global::Login_Farmacia.Properties.Resources.Cerrado;
+            this.Candado.Location = new System.Drawing.Point(135, 60);
+            this.Candado.Name = "Candado";
+            this.Candado.Size = new System.Drawing.Size(145, 201);
+            this.Candado.TabIndex = 0;
+            this.Candado.TabStop = false;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -340,8 +345,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Candado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaProveedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Candado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 

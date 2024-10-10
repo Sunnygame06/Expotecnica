@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Login_Farmacia.Formularios;
 using Login_Farmacia.Formularios.Empleados;
 using Login_Farmacia.Formularios.Inicio;
+using Login_Farmacia.Formularios.Producto;
 using Login_Farmacia.Formularios.Proveedor;
 
 namespace Login_Farmacia.Controlador
@@ -21,9 +22,12 @@ namespace Login_Farmacia.Controlador
             ObjInicio = Vista;
             //ObjInicio.Load += new EventHandler(Inicio);
             ObjInicio.btnCerrarSesion.Click += new EventHandler(Cerrar);
+            ObjInicio.btnClientes.Click += new EventHandler(Clientes);
             ObjInicio.btnProveedor.Click += new EventHandler(Proveedor);
             ObjInicio.btnEmpleado.Click += new EventHandler(Empleado);
-            ObjInicio.btnLogo.Click += new EventHandler(Logo);
+            ObjInicio.btnProducto.Click += new EventHandler(Producto);
+            ObjInicio.btnFactura.Click += new EventHandler(Factura);
+            //ObjInicio.btnLogo.Click += new EventHandler(Logo);
         }
 
         public void Cerrar(object sender, EventArgs e)
@@ -36,11 +40,9 @@ namespace Login_Farmacia.Controlador
             }
         }
 
-        public void Logo(object sender, EventArgs e)
+        public void Clientes(object sender, EventArgs e)
         {
-            Frmusers open = new Frmusers();
-            open.Show();
-            ObjInicio.Hide();
+            AbrirFormulario<Frmshowusers>();
         }
 
         public void Proveedor(object sender, EventArgs e)
@@ -51,6 +53,16 @@ namespace Login_Farmacia.Controlador
         public void Empleado(object sender, EventArgs e)
         {
             AbrirFormulario<FrmEmpleado>();
+        }
+
+        public void Producto(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmProducto>();
+        }
+
+        public void Factura(object sender, EventArgs e)
+        {
+
         }
 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
@@ -97,16 +109,16 @@ namespace Login_Farmacia.Controlador
             }
         }
 
-        private void CerrarForm(object sender, EventArgs e)
-        {
-            if (currentForm != null)
-            {
+        //private void CerrarForm(object sender, EventArgs e)
+        //{
+        //    if (currentForm != null)
+        //    {
                 //Se cierra el formulario actual para mostrar el nuevo formulario
-                currentForm.Close();
+                //currentForm.Close();
                 //Se eliminan del panel contenedor todos los controles del formulario que se cerrará
-                ObjInicio.PanelContenedor.Controls.Remove(currentForm);
-            }
-        }
+                //ObjInicio.PanelContenedor.Controls.Remove(currentForm);
+        //    }
+        //}
 
     }
 }

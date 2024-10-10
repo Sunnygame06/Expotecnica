@@ -22,7 +22,6 @@ namespace Login_Farmacia.Controlador
             Objuser.btnActualizar.Click += new EventHandler(ActualizarUsuario);
             Objuser.btnEliminar.Click += new EventHandler(EliminarUsuario);
             Objuser.txtBuscar.KeyPress += new KeyPressEventHandler(Buscar);
-            Objuser.btnAtras.Click += new EventHandler(Atras);
         }
 
         public void Refrescar(object sender, EventArgs e)
@@ -117,13 +116,6 @@ namespace Login_Farmacia.Controlador
             Objuser.txtNombre.Text = "";
             Objuser.txtDireccion.Text = "";
             Objuser.txtTelefono.Text = "";
-        }
-
-        public void Atras(object sender, EventArgs e)
-        {
-            Frmusers ObjUsers = new Frmusers();
-            ObjUsers.Show();
-            Objuser.Hide();
         }
     }
 }

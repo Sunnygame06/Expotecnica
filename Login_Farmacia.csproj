@@ -156,8 +156,7 @@
   <ItemGroup>
     <Compile Include="Clase\XMLDocument.cs" />
     <Compile Include="Controlador\Empleados\ControllerActualizarEmpleado.cs" />
-    <Compile Include="Controlador\Empleados\ControllerAgregar.cs" />
-    <Compile Include="Controlador\Empleados\ControllerEmpleado.cs" />
+    <Compile Include="Controlador\Empleados\ControllerEmpleados.cs" />
     <Compile Include="Controlador\Inicio\ControllerInicio.cs" />
     <Compile Include="Controlador\Proveedor\ControllerActualizarPro.cs" />
     <Compile Include="Controlador\Proveedor\ControllerProveedor.cs" />
@@ -177,11 +176,11 @@
     <Compile Include="Controlador\Showusers\Controllershowusers.cs" />
     <Compile Include="Controlador\Recuperarcontra\Preguntas de seguridad\ControllerRecuperarporPregunta.cs" />
     <Compile Include="Clase\Encriptar.cs" />
-    <Compile Include="Formularios\Empleados\FrmAgregarEmpleado.cs">
+    <Compile Include="Formularios\Empleados\FrmActualizarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Empleados\FrmAgregarEmpleado.Designer.cs">
-      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
+    <Compile Include="Formularios\Empleados\FrmActualizarEmpleado.Designer.cs">
+      <DependentUpon>FrmActualizarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Empleados\FrmEmpleado.cs">
       <SubType>Form</SubType>
@@ -194,6 +193,12 @@
     </Compile>
     <Compile Include="Formularios\Inicio\FrmIniciar.Designer.cs">
       <DependentUpon>FrmIniciar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Producto\FrmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Producto\FrmProducto.Designer.cs">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Proveedor\FrmActualizarPro.cs">
       <SubType>Form</SubType>
@@ -303,29 +308,27 @@
     <Compile Include="Formularios\Login\Frmlogin.Designer.cs">
       <DependentUpon>Frmlogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Showusers\Frmusers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Showusers\Frmusers.Designer.cs">
-      <DependentUpon>Frmusers.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
     <Compile Include="Modelo\DTO\DTOdbContext.cs" />
     <Compile Include="Modelo\DTO\DTOempleados.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
     <Compile Include="Modelo\DTO\DTOPreguntas.cs" />
+    <Compile Include="Modelo\DTO\DTOProducto.cs" />
     <Compile Include="Modelo\DTO\DTOProveedores.cs" />
     <Compile Include="Modelo\DTO\DTOshowusers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Empleados\FrmAgregarEmpleado.resx">
-      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Empleados\FrmActualizarEmpleado.resx">
+      <DependentUpon>FrmActualizarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Empleados\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Inicio\FrmIniciar.resx">
       <DependentUpon>FrmIniciar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Producto\FrmProducto.resx">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proveedor\FrmActualizarPro.resx">
       <DependentUpon>FrmActualizarPro.cs</DependentUpon>
@@ -374,9 +377,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Showusers\Frmshowusers.resx">
       <DependentUpon>Frmshowusers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Showusers\Frmusers.resx">
-      <DependentUpon>Frmusers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Recuperarcontra\Preguntas de seguridad\FrmRecuperarporPregunta.resx">
       <DependentUpon>FrmRecuperarporPregunta.cs</DependentUpon>

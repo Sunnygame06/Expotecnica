@@ -22,7 +22,7 @@ namespace Login_Farmacia.Modelo.DAO
             try
             {
                 command.Connection = GetConnection();
-                string query = "SELECT * FROM Personas WHERE Usernames COLLATE Latin1_General_CI_AS = @Usernames AND Passwords COLLATE Latin1_General_CI_AS = @Passwords";
+                string query = "SELECT * FROM Personas WHERE Usernames COLLATE Latin1_General_CI_AI = @Usernames AND Passwords COLLATE Latin1_General_CI_AI = @Passwords";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("@Usernames", Username1);
                 cmd.Parameters.AddWithValue("@Passwords", Password1);
@@ -50,7 +50,7 @@ namespace Login_Farmacia.Modelo.DAO
             try
             {
                 command.Connection = GetConnection();
-                string query = "SELECT * FROM Personas Where Usernames = @Usernames AND Passwords = @Passwords AND idRol = 1";
+                string query = "SELECT * FROM Personas Where Usernames COLLATE Latin1_General_CI_AI = @Usernames AND Passwords COLLATE Latin1_General_CI_AI = @Passwords AND idRol = 1";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("@Usernames", Username1);
                 cmd.Parameters.AddWithValue("@Passwords", Password1);
@@ -78,7 +78,7 @@ namespace Login_Farmacia.Modelo.DAO
             try
             {
                 command.Connection = GetConnection();
-                string query = "SELECT * FROM Personas Where Passwords = @Passwords AND idRol = 1";
+                string query = "SELECT * FROM Personas Where Passwords COLLATE Latin1_General_CI_AI = @Passwords AND idRol = 1";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("@Passwords", Password1);
                 SqlDataReader rd = cmd.ExecuteReader();

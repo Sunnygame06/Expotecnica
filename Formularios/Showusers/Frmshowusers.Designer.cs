@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAtras = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -53,7 +52,6 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnAtras);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.btnEliminar);
@@ -71,18 +69,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1016, 476);
             this.panel1.TabIndex = 1;
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.BackColor = System.Drawing.Color.White;
-            this.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtras.Location = new System.Drawing.Point(0, 0);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(75, 27);
-            this.btnAtras.TabIndex = 13;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -262,6 +248,5 @@
         public System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox txtBuscar;
-        public System.Windows.Forms.Button btnAtras;
     }
 }

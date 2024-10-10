@@ -13,6 +13,7 @@ using Login_Farmacia.Formularios.Server;
 using System.Runtime.InteropServices;
 using Login_Farmacia.Modelo.DTO;
 using System.Drawing;
+using Login_Farmacia.Formularios.Inicio;
 
 namespace Login_Farmacia
 {
@@ -102,8 +103,8 @@ namespace Login_Farmacia
                 {
                     MessageBox.Show("Los datos ingresados son correctos", "Datos correctos", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Frmusers Frmusers = new Frmusers();
-                    Frmusers.Show();
+                    FrmIniciar abrir = new FrmIniciar();
+                    abrir.Show();
                     ObjLogin.Hide();
                 }
                 else
