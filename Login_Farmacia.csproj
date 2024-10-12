@@ -157,7 +157,11 @@
     <Compile Include="Clase\XMLDocument.cs" />
     <Compile Include="Controlador\Empleados\ControllerActualizarEmpleado.cs" />
     <Compile Include="Controlador\Empleados\ControllerEmpleados.cs" />
+    <Compile Include="Controlador\Factura\ControllerActualizarFactura.cs" />
+    <Compile Include="Controlador\Factura\ControllerAgregarFactura.cs" />
+    <Compile Include="Controlador\Factura\ControllerFactura.cs" />
     <Compile Include="Controlador\Inicio\ControllerInicio.cs" />
+    <Compile Include="Controlador\Producto\ControllerProducto.cs" />
     <Compile Include="Controlador\Proveedor\ControllerActualizarPro.cs" />
     <Compile Include="Controlador\Proveedor\ControllerProveedor.cs" />
     <Compile Include="Controlador\Recuperarcontra\Gmail\ControllerIngresarPIN.cs" />
@@ -188,11 +192,35 @@
     <Compile Include="Formularios\Empleados\FrmEmpleado.Designer.cs">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Factura\FrmActualizarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Factura\FrmActualizarFactura.Designer.cs">
+      <DependentUpon>FrmActualizarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Factura\FrmAgregarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Factura\FrmAgregarFactura.Designer.cs">
+      <DependentUpon>FrmAgregarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Factura\FrmFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Factura\FrmFactura.Designer.cs">
+      <DependentUpon>FrmFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Inicio\FrmIniciar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Inicio\FrmIniciar.Designer.cs">
       <DependentUpon>FrmIniciar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Producto\FrmActualizarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Producto\FrmActualizarProducto.Designer.cs">
+      <DependentUpon>FrmActualizarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Producto\FrmProducto.cs">
       <SubType>Form</SubType>
@@ -298,9 +326,12 @@
     </Compile>
     <Compile Include="Modelo\ControllerInit.cs" />
     <Compile Include="Modelo\DAO\DAOempleados.cs" />
+    <Compile Include="Modelo\DAO\DAOFactura.cs" />
     <Compile Include="Modelo\DAO\DAOPreguntas.cs" />
+    <Compile Include="Modelo\DAO\DAOProductos.cs" />
     <Compile Include="Modelo\DAO\DAOProveedores.cs" />
     <Compile Include="Modelo\DAO\DAOshowusers.cs" />
+    <Compile Include="Modelo\DAO\DAOVenta.cs" />
     <Compile Include="Modelo\dbContext.cs" />
     <Compile Include="Formularios\Login\Frmlogin.cs">
       <SubType>Form</SubType>
@@ -311,11 +342,13 @@
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
     <Compile Include="Modelo\DTO\DTOdbContext.cs" />
     <Compile Include="Modelo\DTO\DTOempleados.cs" />
+    <Compile Include="Modelo\DTO\DTOFactura.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
     <Compile Include="Modelo\DTO\DTOPreguntas.cs" />
     <Compile Include="Modelo\DTO\DTOProducto.cs" />
     <Compile Include="Modelo\DTO\DTOProveedores.cs" />
     <Compile Include="Modelo\DTO\DTOshowusers.cs" />
+    <Compile Include="Modelo\DTO\DTOVenta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Empleados\FrmActualizarEmpleado.resx">
@@ -324,8 +357,20 @@
     <EmbeddedResource Include="Formularios\Empleados\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Factura\FrmActualizarFactura.resx">
+      <DependentUpon>FrmActualizarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Factura\FrmAgregarFactura.resx">
+      <DependentUpon>FrmAgregarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Factura\FrmFactura.resx">
+      <DependentUpon>FrmFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Inicio\FrmIniciar.resx">
       <DependentUpon>FrmIniciar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Producto\FrmActualizarProducto.resx">
+      <DependentUpon>FrmActualizarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Producto\FrmProducto.resx">
       <DependentUpon>FrmProducto.cs</DependentUpon>

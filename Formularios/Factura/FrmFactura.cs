@@ -1,4 +1,4 @@
-﻿using Login_Farmacia.Controlador.Producto;
+﻿using Login_Farmacia.Controlador.Factura;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Login_Farmacia.Formularios.Producto
+namespace Login_Farmacia.Formularios
 {
-    public partial class FrmProducto : Form
+    public partial class FrmFactura : Form
     {
-        public FrmProducto()
+        public FrmFactura()
         {
             InitializeComponent();
-            ControllerProducto objControl = new ControllerProducto(this);
+            ControllerFactura objControl = new ControllerFactura(this);
         }
     }
 }

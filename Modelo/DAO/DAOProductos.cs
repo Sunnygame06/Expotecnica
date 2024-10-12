@@ -3,51 +3,28 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Login_Farmacia.Modelo.DAO
 {
-    internal class DAOempleados : DTOempleados
+    internal class DAOProductos : DTOProducto
     {
         readonly SqlCommand command = new SqlCommand();
 
-        public DataSet VerEmpleados()
+        public DataSet VerProductos()
         {
             try
             {
                 command.Connection = GetConnection();
-                string query = "Select * From Empleados";
+                string query = "Select * From Producto";
                 SqlCommand cmdVer = new SqlCommand(query, command.Connection);
                 cmdVer.ExecuteNonQuery();
                 SqlDataAdapter adp = new SqlDataAdapter(cmdVer);
                 DataSet ds = new DataSet();
-                adp.Fill(ds, "Empleados");
-                return ds;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error" + ex.Message);
-                return null;
-            }
-
-        }
-
-        public DataSet VerUsuario()
-        {
-            try
-            {
-                command.Connection = GetConnection();
-                string query = "Select * From Usuarios";
-                SqlCommand cmdVer = new SqlCommand(query, command.Connection);
-                cmdVer.ExecuteNonQuery();
-                SqlDataAdapter adp = new SqlDataAdapter(cmdVer);
-                DataSet ds = new DataSet();
-                adp.Fill(ds, "Usuarios");
+                adp.Fill(ds, "Producto");
                 return ds;
             }
             catch (Exception ex)
@@ -57,19 +34,39 @@ namespace Login_Farmacia.Modelo.DAO
             }
         }
 
-        public int IngresarEmpleado()
+        public DataSet VerProveedores()
         {
             try
             {
                 command.Connection = GetConnection();
-                string query = "Insert into Empleados Values(@param1, @param2, @param3, @param4, @param5, @param6)";
+                string query = "Select idProveedor, Nombre_Empresa From Proveedor";
+                SqlCommand cmdVer = new SqlCommand(query, command.Connection);
+                cmdVer.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdVer);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "Proveedor");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+                return null;
+            }
+        }
+
+        public int IngresarProducto()
+        {
+            try
+            {
+                command.Connection = GetConnection();
+                string query = "Insert into Producto Values(@param1, @param2, @param3, @param4, @param5, @param6)";
                 SqlCommand cmdInsertar = new SqlCommand(query, command.Connection);
                 cmdInsertar.Parameters.AddWithValue("Param1", Nombre);
-                cmdInsertar.Parameters.AddWithValue("param2", FechaNacimiento);
-                cmdInsertar.Parameters.AddWithValue("param3", EstadoCivil);
-                cmdInsertar.Parameters.AddWithValue("param4", Dui);
-                cmdInsertar.Parameters.AddWithValue("param5", Telefono);
-                cmdInsertar.Parameters.AddWithValue("param6", IdUser);
+                cmdInsertar.Parameters.AddWithValue("param5", Descripcion);
+                cmdInsertar.Parameters.AddWithValue("param3", Precio);  
+                cmdInsertar.Parameters.AddWithValue("param2", FechadeVencimiento);
+                cmdInsertar.Parameters.AddWithValue("param4", Stock);
+                cmdInsertar.Parameters.AddWithValue("param6", Proveedor);
                 int respuesta = cmdInsertar.ExecuteNonQuery();
                 if (respuesta == 1)
                 {
@@ -90,20 +87,21 @@ namespace Login_Farmacia.Modelo.DAO
                 GetConnection().Close();
             }
         }
+
         public int ActualizarEmpleado()
         {
             try
             {
                 command.Connection = GetConnection();
-                string query = "Update Empleados Set Nombre = @param1, Fecha_Nacimiento = @param2, Estado_Civil = @param3, DUI = @param4, Telefono = @param5, idUser = @param6 Where idEmpleados = @param7";
+                string query = "Update Producto Set nombre_Producto = @param1, Fecha_Vencimiento = @param2, Precio = @param3, Stock = @param4, Descripcion = @param5, idProveedor = @param6 Where Codigo_Producto = @param7";
                 SqlCommand cmdInsertar = new SqlCommand(query, command.Connection);
                 cmdInsertar.Parameters.AddWithValue("Param1", Nombre);
-                cmdInsertar.Parameters.AddWithValue("param2", FechaNacimiento);
-                cmdInsertar.Parameters.AddWithValue("param3", EstadoCivil);
-                cmdInsertar.Parameters.AddWithValue("param4", Dui);
-                cmdInsertar.Parameters.AddWithValue("param5", Telefono);
-                cmdInsertar.Parameters.AddWithValue("param6", IdUser);
-                cmdInsertar.Parameters.AddWithValue("param7", IdEmpleado);
+                cmdInsertar.Parameters.AddWithValue("param2", FechadeVencimiento);
+                cmdInsertar.Parameters.AddWithValue("param3", Precio);
+                cmdInsertar.Parameters.AddWithValue("param4", Stock);
+                cmdInsertar.Parameters.AddWithValue("param5", Descripcion);
+                cmdInsertar.Parameters.AddWithValue("param6", Proveedor);
+                cmdInsertar.Parameters.AddWithValue("param7", IdProducto);
                 int respuesta = cmdInsertar.ExecuteNonQuery();
                 if (respuesta == 1)
                 {
@@ -125,14 +123,14 @@ namespace Login_Farmacia.Modelo.DAO
             }
         }
 
-        public int EliminarEmpleado()
+        public int EliminarProducto()
         {
             try
             {
                 command.Connection = GetConnection();
-                string query = "Delete From Empleados Where idEmpleados = @param1";
+                string query = "Delete From Producto Where Codigo_Producto = @param1";
                 SqlCommand cmdEliminar = new SqlCommand(query, command.Connection);
-                cmdEliminar.Parameters.AddWithValue("@param1", IdEmpleado);
+                cmdEliminar.Parameters.AddWithValue("@param1", IdProducto);
                 int respuesta = cmdEliminar.ExecuteNonQuery();
                 return respuesta;
             }
@@ -147,17 +145,17 @@ namespace Login_Farmacia.Modelo.DAO
             }
         }
 
-        public DataSet BuscarEmpleado(string valor)
+        public DataSet BuscarProducto(string valor)
         {
             try
             {
                 command.Connection = GetConnection();
-                string query = $"Select * From Empleados Where Nombre LIKE '%{valor}%' OR Fecha_Nacimiento LIKE '%{valor}%' OR Telefono LIKE '%{valor}%'";
+                string query = $"Select * From Producto Where nombre_Producto LIKE '%{valor}%' OR Codigo_Producto LIKE '%{valor}%'";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
-                adp.Fill(ds, "Empleados");
+                adp.Fill(ds, "Producto");
                 return ds;
             }
             catch (Exception ex)

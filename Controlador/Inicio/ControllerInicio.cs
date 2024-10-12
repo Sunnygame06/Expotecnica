@@ -62,7 +62,7 @@ namespace Login_Farmacia.Controlador
 
         public void Factura(object sender, EventArgs e)
         {
-
+            AbrirFormulario<FrmFactura>();
         }
 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()

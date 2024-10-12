@@ -1,5 +1,4 @@
-﻿using Login_Farmacia.Controlador.Producto;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,12 +10,11 @@ using System.Windows.Forms;
 
 namespace Login_Farmacia.Formularios.Producto
 {
-    public partial class FrmProducto : Form
+    public partial class FrmActualizarProducto : Form
     {
-        public FrmProducto()
+        public FrmActualizarProducto()
         {
             InitializeComponent();
-            ControllerProducto objControl = new ControllerProducto(this);
         }
     }
 }
