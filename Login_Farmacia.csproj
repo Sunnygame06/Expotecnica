@@ -161,6 +161,7 @@
     <Compile Include="Controlador\Factura\ControllerAgregarFactura.cs" />
     <Compile Include="Controlador\Factura\ControllerFactura.cs" />
     <Compile Include="Controlador\Inicio\ControllerInicio.cs" />
+    <Compile Include="Controlador\Producto\ControllerActualizarProducto.cs" />
     <Compile Include="Controlador\Producto\ControllerProducto.cs" />
     <Compile Include="Controlador\Proveedor\ControllerActualizarPro.cs" />
     <Compile Include="Controlador\Proveedor\ControllerProveedor.cs" />

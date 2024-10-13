@@ -143,6 +143,7 @@ namespace Login_Farmacia.Controlador.Empleados
                 {
                     MessageBox.Show("Los datos se han eliminado exitosamente", "Accion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MostrarEmpleados();
+                    Refrescar();
                 }
                 else
                 {
@@ -157,6 +158,14 @@ namespace Login_Farmacia.Controlador.Empleados
             DataSet ds = objBuscar.BuscarEmpleado(ObjEmpleados.txtBuscar.Text.Trim());
 
             ObjEmpleados.listadeempleados.DataSource = ds.Tables["Empleados"];
+        }
+
+        public void Refrescar()
+        {
+            ObjEmpleados.txtnombre.Text = "";
+            ObjEmpleados.txtEstadoCivil.Text = "";
+            ObjEmpleados.txtDUI.Text = "";
+            ObjEmpleados.txtTelefono.Text = "";
         }
     }
 }

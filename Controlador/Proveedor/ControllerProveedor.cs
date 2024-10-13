@@ -140,20 +140,6 @@ namespace Login_Farmacia.Controlador.Proveedor
             }
         }
 
-        public void Logo(object sender, EventArgs e)
-        {
-            FrmIniciar open = new FrmIniciar();
-            open.Show();
-            ObjProveedor.Hide();
-        }
-
-        public void Empleado(object sender, EventArgs e)
-        {
-            FrmEmpleado open = new FrmEmpleado();
-            open.Show();
-            ObjProveedor.Hide();
-        }
-
         public void Buscar(object sender, EventArgs e)
         {
             DAOProveedores ObjBuscar = new DAOProveedores();

@@ -62,10 +62,10 @@ namespace Login_Farmacia.Modelo.DAO
                 string query = "Insert into Producto Values(@param1, @param2, @param3, @param4, @param5, @param6)";
                 SqlCommand cmdInsertar = new SqlCommand(query, command.Connection);
                 cmdInsertar.Parameters.AddWithValue("Param1", Nombre);
-                cmdInsertar.Parameters.AddWithValue("param5", Descripcion);
+                cmdInsertar.Parameters.AddWithValue("param2", Descripcion);
                 cmdInsertar.Parameters.AddWithValue("param3", Precio);  
-                cmdInsertar.Parameters.AddWithValue("param2", FechadeVencimiento);
-                cmdInsertar.Parameters.AddWithValue("param4", Stock);
+                cmdInsertar.Parameters.AddWithValue("param4", FechadeVencimiento);
+                cmdInsertar.Parameters.AddWithValue("param5", Stock);
                 cmdInsertar.Parameters.AddWithValue("param6", Proveedor);
                 int respuesta = cmdInsertar.ExecuteNonQuery();
                 if (respuesta == 1)
@@ -88,7 +88,7 @@ namespace Login_Farmacia.Modelo.DAO
             }
         }
 
-        public int ActualizarEmpleado()
+        public int ActualizarProducto()
         {
             try
             {

@@ -1,4 +1,5 @@
-﻿using Login_Farmacia.Formularios.Producto;
+﻿using Login_Farmacia.Formularios.Empleados;
+using Login_Farmacia.Formularios.Producto;
 using Login_Farmacia.Modelo.DAO;
 using System;
 using System.Collections.Generic;
@@ -45,35 +46,60 @@ namespace Login_Farmacia.Controlador.Producto
 
         public void Agregar(object sender, EventArgs e)
         {
-            if (ObjProducto.txtnombre.Text == "" || ObjProducto.txtDescripcion.Text == "" || ObjProducto.txtPrecio.Text == "" || ObjProducto.txtStock.Text == "" || ObjProducto.DTFechadeVencimiento.Text == "" || ObjProducto.cmbProveedor.Text == "")
+            if (!System.Text.RegularExpressions.Regex.IsMatch(ObjProducto.txtStock.Text, @"^\d+$"))
             {
-                MessageBox.Show("EC02 - Algunos campos no se han llenado", "Accion Interrumpida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se permite agregar caracteres en el campo de Stock", "Accion Interrumpida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ObjProducto.txtStock.Text = "";
             }
-            else
+            else 
             {
-                DAOProductos daoAgregar = new DAOProductos();
-                daoAgregar.Nombre = ObjProducto.txtnombre.Text.Trim();
-                daoAgregar.Descripcion = ObjProducto.txtDescripcion.Text.Trim();
-                daoAgregar.Precio = decimal.Parse(ObjProducto.txtPrecio.Text.Trim());
-                daoAgregar.FechadeVencimiento = ObjProducto.DTFechadeVencimiento.Value;
-                daoAgregar.Stock = int.Parse(ObjProducto.txtStock.Text.Trim());
-                daoAgregar.Proveedor = int.Parse(ObjProducto.cmbProveedor.SelectedValue.ToString());
-                int retorno = daoAgregar.IngresarProducto();
-                if (retorno == 1)
+                if (ObjProducto.txtnombre.Text == "" || ObjProducto.txtDescripcion.Text == "" || ObjProducto.txtPrecio.Text == "" || ObjProducto.txtStock.Text == "" || ObjProducto.DTFechadeVencimiento.Text == "" || ObjProducto.cmbProveedor.Text == "")
                 {
-                    MessageBox.Show("Datos ingresados correctamente", "Accion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MostrarProducto();
+                    MessageBox.Show("EC02 - Algunos campos no se han llenado", "Accion Interrumpida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Hubo error al ingresar los datos", "Accion Interrumpida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DAOProductos daoAgregar = new DAOProductos();
+                    daoAgregar.Nombre = ObjProducto.txtnombre.Text.Trim();
+                    daoAgregar.Descripcion = ObjProducto.txtDescripcion.Text.Trim();
+                    daoAgregar.Precio = decimal.Parse(ObjProducto.txtPrecio.Text.Trim());
+                    daoAgregar.FechadeVencimiento = ObjProducto.DTFechadeVencimiento.Value;
+                    daoAgregar.Stock = int.Parse(ObjProducto.txtStock.Text.Trim());
+                    daoAgregar.Proveedor = int.Parse(ObjProducto.cmbProveedor.SelectedValue.ToString());
+                    int retorno = daoAgregar.IngresarProducto();
+                    if (retorno == 1)
+                    {
+                        MessageBox.Show("Datos ingresados correctamente", "Accion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MostrarProducto();
+                        Refrescar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo error al ingresar los datos", "Accion Interrumpida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
 
         public void Actualizar(object sender, EventArgs e)
         {
+            int pos = ObjProducto.ListadeProductos.CurrentRow.Index;
+            int id, Stock ,Proveedor;
+            decimal Precio;
+            string Nombre, Descripcion;
+            DateTime FechadeVencimiento;
 
+            id = int.Parse(ObjProducto.ListadeProductos[0, pos].Value.ToString());
+            Nombre = ObjProducto.ListadeProductos[1, pos].Value.ToString();
+            Descripcion = ObjProducto.ListadeProductos[2, pos].Value.ToString();
+            Precio = decimal.Parse(ObjProducto.ListadeProductos[3, pos].Value.ToString());
+            FechadeVencimiento = DateTime.Parse(ObjProducto.ListadeProductos[4, pos].Value.ToString());
+            Stock = int.Parse(ObjProducto.ListadeProductos[5, pos].Value.ToString());
+            Proveedor = int.Parse(ObjProducto.ListadeProductos[6, pos].Value.ToString());
+
+            FrmActualizarProducto open = new FrmActualizarProducto(id, Nombre, Descripcion, Precio, FechadeVencimiento, Stock, Proveedor);
+            open.ShowDialog();
+            MostrarProducto();
         }
 
         public void Eliminar(object sender, EventArgs e)
@@ -102,6 +128,14 @@ namespace Login_Farmacia.Controlador.Producto
             DataSet ds = objBuscar.BuscarProducto(ObjProducto.txtBuscar.Text.Trim());
 
             ObjProducto.ListadeProductos.DataSource = ds.Tables["Producto"];
+        }
+
+        public void Refrescar()
+        {
+            ObjProducto.txtnombre.Text = "";
+            ObjProducto.txtDescripcion.Text = "";
+            ObjProducto.txtPrecio.Text = "";
+            ObjProducto.txtStock.Text = "";
         }
     }
 }
