@@ -8,7 +8,7 @@ La farmacia higia es una farmacia con un sistema de inventario y facturación me
 * Implementación de patrón de arquitectura MVC.
 * Base de datos en linea con SmarterASP.net.
 * Configuración inicial del sistema (primer usuario).
-* Configuración del servidor tanto local como remoto mediante archivo XML.
+* Configuración del servidor remota mediante archivo XML.
 * Metodos de cambio de contraseña (Preguntas de seguridad, Correo electronico, Intervención de administrador, Reinicio desde el interior del sistema).
 * Metodo de codificación y encriptamiento (AES, SHA256).
 * Gestión de Usuarios.
