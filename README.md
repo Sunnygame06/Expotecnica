@@ -16,5 +16,5 @@ La farmacia higia es una farmacia con un sistema de inventario y facturación me
 * Gestión de Proveedores.
 * Gestión de Empleados.
 * Gestión de Productos.
-* Gestion de Factura.
+* Gestión de Factura.
 
